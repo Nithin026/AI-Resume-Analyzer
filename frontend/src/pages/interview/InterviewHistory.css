@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ==========================
+   LAYOUT
+========================== */
+
+.history-layout {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #f0eeff 0%,
+    #f8f7ff 40%,
+    #eef2ff 100%
+  );
+}
+
+.history-body {
+  padding-top: 80px;
+}
+
+.history-main {
+  margin-left: 240px;
+  padding: 48px 52px;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.history-main > h1 {
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin-bottom: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #2d2757 0%,
+    #534ab7 50%,
+    #7c6df1 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.history-main > p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  color: #7c7a9e;
+  font-weight: 400;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ==========================
+   SEARCH BOX
+========================== */
+
+.search-box1 {
+  display: block;
+  width: 380px;
+  height: 48px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f1b3a;
+
+  background: rgba(255, 255, 255, .85)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b7bf0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E")
+    no-repeat 14px center;
+
+  backdrop-filter: blur(12px);
+
+  border: 1.5px solid rgba(127, 119, 221, .2);
+  border-radius: 14px;
+
+  padding: 0 18px 0 44px;
+
+  outline: none;
+
+  box-shadow:
+    0 2px 12px rgba(83, 74, 183, .06),
+    inset 0 1px 0 rgba(255, 255, 255, .8);
+
+  margin-bottom: 28px;
+
+  transition: all .25s ease;
+}
+
+.search-box1::placeholder {
+  color: #a9a4c8;
+  font-weight: 400;
+}
+
+.search-box1:focus {
+  border-color: rgba(127, 119, 221, .55);
+  background-color: rgba(255, 255, 255, .98);
+  box-shadow:
+    0 0 0 4px rgba(127, 119, 221, .1),
+    0 4px 16px rgba(83, 74, 183, .08);
+}
+
+/* ==========================
+   HISTORY CARD
+   flex-wrap layout:
+   - h3     → full width row
+   - p tags → 2 per row (50% each)
+   - buttons → side by side, auto width
+========================== */
+
+.history-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0 0;
+
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(127, 119, 221, .12);
+  border-radius: 20px;
+
+  padding: 28px 32px;
+  margin-bottom: 18px;
+
+  box-shadow:
+    0 4px 20px rgba(83, 74, 183, .07),
+    0 1px 4px rgba(83, 74, 183, .04),
+    inset 0 1px 0 rgba(255, 255, 255, .9);
+
+  transition: all .25s cubic-bezier(.4, 0, .2, 1);
+}
+
+.history-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(127, 119, 221, .25);
+  box-shadow:
+    0 12px 32px rgba(83, 74, 183, .12),
+    0 2px 8px rgba(83, 74, 183, .06),
+    inset 0 1px 0 rgba(255, 255, 255, .95);
+}
+
+/* ==========================
+   CARD — TITLE
+   Full width, with divider below
+========================== */
+
+.history-card h3 {
+  width: 100%;
+  flex-shrink: 0;
+
+  font-family: "Sora", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f1b3a;
+  letter-spacing: -.02em;
+  text-transform: capitalize;
+
+  margin: 0 0 16px 0;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid rgba(127, 119, 221, .1);
+}
+
+/* ==========================
+   CARD — META INFO
+   2 per row using 50% width each
+========================== */
+
+.history-card p {
+  width: 50%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #5a5580;
+
+  margin: 0;
+  padding: 5px 0;
+
+  display: block;
+}
+
+/* Odd p tags → left column padding */
+.history-card p:nth-of-type(odd) {
+  padding-right: 12px;
+}
+
+/* Even p tags → right column */
+.history-card p:nth-of-type(even) {
+  padding-left: 4px;
+}
+
+/* Highlight the label portion */
+.history-card p::first-line {
+  color: #3d3670;
+  font-weight: 600;
+}
+
+/* ==========================
+   CARD — BUTTONS
+   Force onto new row, side by side
+========================== */
+
+/* Invisible full-width spacer to push
+   buttons onto a new flex row */
+.history-card button:first-of-type {
+  margin-top: 20px;
+  padding-top: 20px;
+  /* No left margin — start from left */
+  margin-right: 10px;
+}
+
+.history-card button {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+
+  height: 42px;
+  width: auto; /* NOT full width */
+
+  cursor: pointer;
+  flex-shrink: 0;
+
+  transition: all .22s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* First button: add top margin to separate from p tags */
+.history-card button:first-of-type {
+  margin-top: 20px;
+  margin-right: 10px;
+  padding-top: 0;
+
+  background: linear-gradient(
+    135deg,
+    #7c6df1,
+    #534ab7
+  );
+  color: #fff;
+
+  box-shadow:
+    0 4px 14px rgba(83, 74, 183, .28),
+    inset 0 1px 0 rgba(255, 255, 255, .15);
+}
+
+.history-card button:first-of-type:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(83, 74, 183, .38),
+    inset 0 1px 0 rgba(255, 255, 255, .2);
+}
+
+.history-card button:first-of-type:active {
+  transform: scale(.97);
+}
+
+/* Second button: same top margin, red ghost style */
+.history-card button:last-of-type {
+  margin-top: 20px;
+
+  background: rgba(239, 68, 68, .07);
+  color: #dc2626;
+  border: 1.5px solid rgba(239, 68, 68, .2);
+}
+
+.history-card button:last-of-type:hover {
+  background: rgba(239, 68, 68, .13);
+  border-color: rgba(239, 68, 68, .35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, .12);
+}
+
+.history-card button:last-of-type:active {
+  transform: scale(.97);
+}
+
+/* ==========================
+   EMPTY STATE
+========================== */
+
+.empty-state {
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(127, 119, 221, .12);
+  border-radius: 24px;
+
+  padding: 72px 40px;
+  text-align: center;
+
+  box-shadow:
+    0 4px 24px rgba(83, 74, 183, .07),
+    inset 0 1px 0 rgba(255, 255, 255, .9);
+}
+
+.empty-state::before {
+  content: "🎤";
+  display: block;
+  font-size: 52px;
+  margin-bottom: 20px;
+  filter: saturate(0) opacity(.45);
+}
+
+.empty-state h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f1b3a;
+  letter-spacing: -.02em;
+  margin: 0;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+  .history-main {
+    margin-left: 0;
+    padding: 24px 20px;
+  }
+
+  .history-main > h1 {
+    font-size: 22px;
+  }
+
+  .search-box1 {
+    width: 100%;
+  }
+
+  .history-card {
+    padding: 22px 20px;
+    border-radius: 16px;
+  }
+
+  .history-card p {
+    width: 50%;
+  }
+
+  .history-card button {
+    flex: 1;
+  }
+
+  .history-card button:last-of-type {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .history-main {
+    padding: 20px 16px;
+  }
+
+  .history-card {
+    padding: 18px 16px;
+  }
+
+  /* Stack p tags full width on small screens */
+  .history-card p {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Stack buttons full width on small screens */
+  .history-card button {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .history-card button:last-of-type {
+    margin-top: 8px;
+  }
+
+  .empty-state {
+    padding: 48px 20px;
+  }
+}

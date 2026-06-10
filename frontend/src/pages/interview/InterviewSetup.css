@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ==========================
+   LAYOUT
+========================== */
+
+.interview-layout {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #f0eeff 0%,
+    #f8f7ff 40%,
+    #eef2ff 100%
+  );
+}
+
+.interview-body {
+  padding-top: 80px;
+}
+
+.interview-main {
+  margin-left: 240px;
+  padding: 48px 52px;
+  max-width: 780px;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.interview-main > h1 {
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin-bottom: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #2d2757 0%,
+    #534ab7 50%,
+    #7c6df1 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.interview-main > p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  color: #7c7a9e;
+  font-weight: 400;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ==========================
+   FORM CARD
+========================== */
+
+.interview-main form {
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(127, 119, 221, .13);
+  border-radius: 24px;
+
+  padding: 36px 40px 40px;
+
+  box-shadow:
+    0 4px 24px rgba(83, 74, 183, .08),
+    0 1px 4px rgba(83, 74, 183, .04),
+    inset 0 1px 0 rgba(255, 255, 255, .95);
+}
+
+/* ==========================
+   LABELS
+========================== */
+
+.interview-main label {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 8px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #534ab7;
+}
+
+.interview-main form > label:first-child {
+  margin-top: 0;
+}
+
+/* ==========================
+   INPUTS & SELECTS
+========================== */
+
+.interview-main input[type="text"],
+.interview-main input[type="number"],
+.interview-main select {
+  width: 100%;
+  height: 50px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #1f1b3a;
+
+  background: rgba(248, 247, 255, .7);
+
+  border: 1.5px solid rgba(127, 119, 221, .18);
+  border-radius: 14px;
+
+  padding: 0 18px;
+
+  outline: none;
+
+  box-shadow:
+    0 2px 8px rgba(83, 74, 183, .04),
+    inset 0 1px 2px rgba(83, 74, 183, .03);
+
+  transition: all .22s cubic-bezier(.4, 0, .2, 1);
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.interview-main input[type="text"]::placeholder {
+  color: #b0acd0;
+  font-weight: 400;
+}
+
+.interview-main input[type="text"]:focus,
+.interview-main input[type="number"]:focus,
+.interview-main select:focus {
+  border-color: rgba(127, 119, 221, .55);
+  background: #fff;
+  box-shadow:
+    0 0 0 4px rgba(127, 119, 221, .1),
+    0 4px 14px rgba(83, 74, 183, .07);
+}
+
+/* Custom select arrow */
+
+.interview-main select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b7bf0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 42px;
+  cursor: pointer;
+  color: #1f1b3a;
+}
+
+/* Number input */
+
+.interview-main input[type="number"] {
+  width: 140px;
+}
+
+/* ==========================
+   CHECKBOX GROUP
+========================== */
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+
+  padding: 16px 18px;
+  background: rgba(127, 119, 221, .06);
+  border: 1.5px solid rgba(127, 119, 221, .13);
+  border-radius: 14px;
+
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px;
+
+  border: 2px solid rgba(127, 119, 221, .4);
+  border-radius: 5px;
+
+  accent-color: #534ab7;
+
+  cursor: pointer;
+  box-shadow: none;
+  padding: 0;
+}
+
+.checkbox-group span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3d3670;
+}
+
+/* ==========================
+   SUBMIT BUTTON
+========================== */
+
+.interview-main button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 32px;
+  width: 220px;
+  height: 52px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .01em;
+
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    #7c6df1 0%,
+    #534ab7 100%
+  );
+
+  color: #fff;
+
+  box-shadow:
+    0 6px 20px rgba(83, 74, 183, .32),
+    inset 0 1px 0 rgba(255, 255, 255, .15);
+
+  transition: all .22s cubic-bezier(.4, 0, .2, 1);
+}
+
+.interview-main button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 28px rgba(83, 74, 183, .4),
+    inset 0 1px 0 rgba(255, 255, 255, .2);
+}
+
+.interview-main button[type="submit"]:active {
+  transform: scale(.97);
+  box-shadow:
+    0 4px 12px rgba(83, 74, 183, .28);
+}
+
+/* ==========================
+   DIVIDER between sections
+========================== */
+
+.interview-main form > label:not(:first-child) {
+  border-top: 1px solid rgba(127, 119, 221, .08);
+  padding-top: 24px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+  .interview-main {
+    margin-left: 0;
+    padding: 24px 20px;
+    max-width: 100%;
+  }
+
+  .interview-main > h1 {
+    font-size: 22px;
+  }
+
+  .interview-main form {
+    padding: 24px 20px 28px;
+    border-radius: 18px;
+  }
+
+  .interview-main button[type="submit"] {
+    width: 100%;
+  }
+
+  .interview-main input[type="number"] {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .interview-main {
+    padding: 20px 16px;
+  }
+
+  .interview-main form {
+    padding: 20px 16px 24px;
+    border-radius: 16px;
+  }
+
+  .interview-main > h1 {
+    font-size: 20px;
+  }
+}

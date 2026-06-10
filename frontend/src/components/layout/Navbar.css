@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: .6;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 180%;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: 72px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 48px;
+
+  background: rgba(255,255,255,.75);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(139,127,240,.12);
+
+  box-shadow:
+    0 8px 32px rgba(83,74,183,.08);
+
+  transition: all .3s ease;
+}
+
+.navbar:hover {
+  box-shadow:
+    0 10px 40px rgba(83,74,183,.12);
+}
+
+/* ==========================
+   LOGO
+========================== */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  cursor: pointer;
+
+  color: #0f172a;
+
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+
+  transition: all 0.25s ease;
+}
+
+.navbar-logo svg {
+  color: #534ab7;
+  flex-shrink: 0;
+}
+
+.navbar-logo:hover {
+  transform: translateY(-1px);
+}
+
+.navbar-logo span {
+  white-space: nowrap;
+}
+
+/* ==========================
+   AUTH BUTTON
+========================== */
+
+.auth-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 24px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #534ab7;
+
+  background: rgba(127,119,221,.08);
+
+  outline: 1.5px solid rgba(127,119,221,.3);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: all .3s ease;
+}
+
+/* shimmer */
+
+.auth-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255,255,255,.7),
+    transparent
+  );
+
+  transition: .6s ease;
+}
+
+.auth-btn::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border-radius: 14px;
+
+  border: 2px solid rgba(127,119,221,.45);
+
+  opacity: 0;
+}
+
+/* hover */
+
+.auth-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #7f77dd,
+    #534ab7
+  );
+
+  color: white;
+
+  transform: translateY(-3px);
+
+  outline-color: transparent;
+
+  box-shadow:
+    0 12px 28px rgba(83,74,183,.35),
+    0 0 0 6px rgba(127,119,221,.12);
+}
+
+.auth-btn:hover::before {
+  animation: shimmer .8s ease forwards;
+}
+
+.auth-btn:hover::after {
+  opacity: 1;
+  animation: pulse-ring 1.5s infinite;
+}
+
+/* click */
+
+.auth-btn:active {
+  transform: scale(.96);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 20px;
+    height: 64px;
+  }
+
+  .logo {
+    font-size: 16px;
+    padding-left: 42px;
+  }
+
+  .logo::before {
+    width: 32px;
+    height: 32px;
+  }
+
+  .auth-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 14px;
+    padding-left: 38px;
+  }
+
+  .logo::before {
+    width: 28px;
+    height: 28px;
+  }
+
+  .auth-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
