@@ -4,7 +4,7 @@ import json
 from app.core.config import settings
 import os
 
-print("API KEY:", os.getenv("GEMINI_API_KEY"))
+
 
 genai.configure(
     api_key=settings.GEMINI_API_KEY
