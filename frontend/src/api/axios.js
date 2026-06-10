@@ -4,7 +4,7 @@ const axiosInstance =
     axios.create({
 
         baseURL:
-            "http://127.0.0.1:8000",
+            "https://ai-resume-analyzer-backend-sr3i.onrender.com",
     });
 
 axiosInstance.interceptors.request.use(
