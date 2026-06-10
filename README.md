@@ -300,6 +300,6 @@ This project demonstrates practical implementation of:
 **Nithin**
 B.Tech Final Year Student
 
-*AI Resume Analyzer — Final Year Major Project, 2026*
+*AI Resume Analyzer*
 
 </div>
