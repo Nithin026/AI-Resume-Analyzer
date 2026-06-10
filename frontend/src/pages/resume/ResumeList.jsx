@@ -89,8 +89,7 @@ function ResumeList() {
                   <button
                     onClick={() =>
                       window.open(
-                        `http://127.0.0.1:8000/api/resumes/view/${resume.id}`,
-
+                        `https://ai-resume-analyzer-backend-sr3i.onrender.com/api/resumes/view/${resume.id}`,
                         "_blank",
                       )
                     }
